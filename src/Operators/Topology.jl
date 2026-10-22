@@ -1,29 +1,41 @@
 module Topology
 
-export TopologyResult, compute_topology_collapse
+using ..Utils.Types
+
+export compute_topology
 
 """
-    TopologyResult
+    compute_topology(normed)
 
-Container for topology-collapse operator outputs before thresholding.
-"""
-struct TopologyResult
-    value::Float64
-    stable::Bool
-end
+Execution-ready topology collapse operator.
 
-"""
-    compute_topology_collapse(telemetry)
+This function receives normalized telemetry:
+    normed.activation :: ActivationTrace
+    normed.metric     :: MetricEstimate
+    normed.transport  :: TransportHint
 
-Compute the topology collapse operator from telemetry.
-This is scaffolding only — metric determinant and rank logic will be added later.
+It returns a Float64 topology-collapse estimate. Numerical routines will be
+added later; this scaffolding defines the operator's execution signature and
+data flow.
+
+# Expected Output
+A single Float64 representing the topology collapse indicator for the current
+telemetry slice.
+
+# Notes
+- No determinant, rank, or metric-degeneracy math is implemented yet.
+- The placeholder block will be replaced with collapse detection routines
+  once the operator math phase begins.
 """
-function compute_topology_collapse(telemetry)
-    # TODO: extract metric estimate from LGT
-    # TODO: compute determinant and rank
-    # TODO: compute collapse score
-    # TODO: return TopologyResult(value, stable)
-    error("compute_topology_collapse not yet implemented")
+function compute_topology(normed::NamedTuple)
+    act = normed.activation
+    met = normed.metric
+    trn = normed.transport
+
+    # Placeholder computation block (no math yet)
+    topology_value = 0.0
+
+    return topology_value
 end
 
 end # module
