@@ -22,10 +22,30 @@ This repo is the runtime engine powering structural AI interpretability.
 
 ---
 
+📡 Telemetry Inputs
+The runtime ingests two safe, clearly defined telemetry streams:
+
+🔵 CAUSA Telemetry
+Causal‑structure telemetry describing activation flow and local geometric behavior.
+
+🟢 Local Geometry Telemetry (LGT)
+A clean replacement for any prior “CMR” terminology.  
+LGT provides:
+
+- local manifold approximations  
+- metric estimates  
+- parallel transport hints  
+- geometric context signals  
+
+These telemetry streams feed the operator extraction layer.
+
+---
+
 🗂️ Repository Layout
 
 `
 <pre> 
+    
 StructuralAI-Julia-Runtime/
 │
 ├── Project.toml
@@ -47,7 +67,7 @@ StructuralAI-Julia-Runtime/
 │   │
 │   ├── Runtime/
 │   │   ├── Pipeline.jl         🟪 unified runtime loop
-│   │   ├── Telemetry.jl        🟫 telemetry ingestion hooks
+│   │   ├── Telemetry.jl        🟫 CAUSA + LGT ingestion hooks
 │   │   └── ModelInterface.jl   ⚪ model abstraction layer
 │   │
 │   ├── LeanBridge/
@@ -167,7 +187,7 @@ ready for Lean ingestion.
 
 🧭 Roadmap
 🟩 v1.0 — Operator extraction + Lean export  
-🟧 v1.1 — CAUSA/CMR telemetry ingestion  
+🟧 v1.1 — CAUSA + LGT telemetry ingestion  
 🟦 v1.2 — GPU kernels for spectral + curvature  
 🟪 v1.3 — Rust FFI for deployment  
 🟫 v1.4 — WASM runtime for browser‑based interpretability  
