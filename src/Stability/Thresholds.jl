@@ -1,67 +1,82 @@
 module Thresholds
 
-export CurvatureThresholds,
-       SpectralThresholds,
-       HolonomyThresholds,
-       TopologyThresholds,
-       FusionThresholds
-
-export load_thresholds
+export Thresholds, load_thresholds, apply_thresholds
 
 """
-    CurvatureThresholds
+    Thresholds
 
-Thresholds for curvature stability evaluation.
+Container for operator thresholds.
+
+Each field corresponds to one operator:
+    threshold_curv :: Float64
+    threshold_spec :: Float64
+    threshold_hol  :: Float64
+    threshold_top  :: Float64
+    threshold_fus  :: Float64
+
+These values determine whether each operator's output is considered stable.
 """
-struct CurvatureThresholds
-    tau_curv::Float64
+struct Thresholds
+    threshold_curv::Float64
+    threshold_spec::Float64
+    threshold_hol::Float64
+    threshold_top::Float64
+    threshold_fus::Float64
 end
 
 """
-    SpectralThresholds
+    load_thresholds(path::String)
 
-Thresholds for spectral drift stability evaluation.
+Execution-ready threshold loader.
+
+Currently returns placeholder values. Will later parse JSON or TOML
+from the provided path.
+
+# Output
+A Thresholds struct with default placeholder values.
 """
-struct SpectralThresholds
-    tau_spec::Float64
+function load_thresholds(path::String)
+    # Placeholder thresholds (no file parsing yet)
+    return Thresholds(
+        1.0,  # curvature threshold
+        1.0,  # spectral threshold
+        1.0,  # holonomy threshold
+        1.0,  # topology threshold
+        1.0   # fusion threshold
+    )
 end
 
 """
-    HolonomyThresholds
+    apply_thresholds(vals, thresholds)
 
-Thresholds for holonomy deviation stability evaluation.
-"""
-struct HolonomyThresholds
-    tau_hol::Float64
-end
+Execution-ready threshold comparison.
 
-"""
-    TopologyThresholds
+Inputs:
+    vals.curvature :: Float64
+    vals.spectral  :: Float64
+    vals.holonomy  :: Float64
+    vals.topology  :: Float64
+    vals.fusion    :: Float64
 
-Thresholds for topology collapse stability evaluation.
-"""
-struct TopologyThresholds
-    tau_top::Float64
-end
+    thresholds :: Thresholds
 
-"""
-    FusionThresholds
+Output:
+    NamedTuple of booleans:
+        (curvStable, specStable, holStable, topStable, fusStable)
 
-Thresholds for fusion-field nonlinearity stability evaluation.
+Notes:
+- No real comparison logic is implemented yet.
+- Placeholder booleans are returned until operator math is added.
 """
-struct FusionThresholds
-    tau_fus::Float64
-end
-
-"""
-    load_thresholds()
-
-Placeholder for loading threshold values.
-Eventually this will pull from config files or runtime parameters.
-"""
-function load_thresholds()
-    # TODO: load thresholds from config or runtime parameters
-    error("load_thresholds not yet implemented")
+function apply_thresholds(vals::NamedTuple, thresholds::Thresholds)
+    # Placeholder logic (no comparisons yet)
+    return (
+        curvStable = true,
+        specStable = true,
+        holStable  = true,
+        topStable  = true,
+        fusStable  = true
+    )
 end
 
 end # module
