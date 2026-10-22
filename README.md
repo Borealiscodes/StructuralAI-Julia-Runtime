@@ -23,13 +23,14 @@ This repo is the runtime engine powering structural AI interpretability.
 ---
 
 📡 Telemetry Inputs
-The runtime ingests two safe, clearly defined telemetry streams:
+The runtime ingests two clearly defined telemetry streams:
 
 🔵 CAUSA Telemetry
-Causal‑structure telemetry describing activation flow and local geometric behavior.
+Causal‑structure telemetry describing activation flow and local geometric behavior.  
+Repository: https://github.com/stell2026/Causa
 
 🟢 Local Geometry Telemetry (LGT)
-A clean replacement for any prior “CMR” terminology.  
+A clean, public‑safe replacement for any prior “CMR” terminology.  
 LGT provides:
 
 - local manifold approximations  
@@ -44,8 +45,8 @@ These telemetry streams feed the operator extraction layer.
 🗂️ Repository Layout
 
 `
-<pre> 
-    
+<pre>
+
 StructuralAI-Julia-Runtime/
 │
 ├── Project.toml
@@ -98,6 +99,7 @@ StructuralAI-Julia-Runtime/
     ├── lean_integration.md
     └── telemetry.md
 `
+
 </pre>
 ---
 
@@ -191,6 +193,27 @@ ready for Lean ingestion.
 🟦 v1.2 — GPU kernels for spectral + curvature  
 🟪 v1.3 — Rust FFI for deployment  
 🟫 v1.4 — WASM runtime for browser‑based interpretability  
+
+---
+
+🙏 Acknowledgments & Conceptual Influences
+This project acknowledges the conceptual influence of Stell (stell2026), whose work in Anima Classic demonstrated early patterns for using Julia in geometric‑AI runtimes. Her projects provided valuable insights into:
+
+- structuring operator‑extraction pipelines  
+- designing geometric telemetry flows  
+- integrating Julia with higher‑order AI systems  
+
+In particular, CAUSA offered a clear example of causal‑structure telemetry design and is linked here out of respect:
+
+🔗 https://github.com/stell2026/Causa
+
+These influences informed the high‑level design of the StructuralAI‑Julia‑Runtime, while the implementation, operator definitions, stability framework, and Lean integration are original to this project.
+
+---
+
+📜 Provenance
+Authored by Borealis S. Hedling as part of the StructuralAI ecosystem.  
+Reflects the current architectural direction of the GHT runtime engine and its integration with CAUSA/LGT telemetry and the Lean verification spine.
 
 ---
 
