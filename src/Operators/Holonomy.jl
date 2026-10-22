@@ -1,29 +1,41 @@
 module Holonomy
 
-export HolonomyResult, compute_holonomy_deviation
+using ..Utils.Types
+
+export compute_holonomy
 
 """
-    HolonomyResult
+    compute_holonomy(normed)
 
-Container for holonomy deviation operator outputs before thresholding.
-"""
-struct HolonomyResult
-    value::Float64
-    stable::Bool
-end
+Execution-ready holonomy deviation operator.
 
-"""
-    compute_holonomy_deviation(telemetry)
+This function receives normalized telemetry:
+    normed.activation :: ActivationTrace
+    normed.metric     :: MetricEstimate
+    normed.transport  :: TransportHint
 
-Compute the holonomy deviation operator from telemetry.
-This is scaffolding only — parallel transport logic will be added later.
+It returns a Float64 holonomy deviation estimate. Numerical routines will be
+added later; this scaffolding defines the operator's execution signature and
+data flow.
+
+# Expected Output
+A single Float64 representing the holonomy deviation for the current
+telemetry slice.
+
+# Notes
+- No parallel transport or loop-based holonomy math is implemented yet.
+- The placeholder block will be replaced with holonomy drift computation
+  once the operator math phase begins.
 """
-function compute_holonomy_deviation(telemetry)
-    # TODO: extract local geometry + transport hints from LGT
-    # TODO: perform discrete parallel transport along loop segments
-    # TODO: compute deviation norm
-    # TODO: return HolonomyResult(value, stable)
-    error("compute_holonomy_deviation not yet implemented")
+function compute_holonomy(normed::NamedTuple)
+    act = normed.activation
+    met = normed.metric
+    trn = normed.transport
+
+    # Placeholder computation block (no math yet)
+    holonomy_value = 0.0
+
+    return holonomy_value
 end
 
 end # module
