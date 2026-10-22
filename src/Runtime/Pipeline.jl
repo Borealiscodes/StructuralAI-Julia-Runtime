@@ -1,6 +1,7 @@
 module Pipeline
 
-using ..Runtime.Telemetry
+using ..Runtime.Telemetry.Ingest
+using ..Runtime.Telemetry.Normalize
 using ..Operators.Curvature
 using ..Operators.Spectral
 using ..Operators.Holonomy
@@ -16,26 +17,18 @@ export run_pipeline
 """
     run_pipeline(model, raw_telemetry; config=load_config())
 
-Full runtime pipeline with real operator math and stability evaluation.
-
-Steps:
-1. Ingest raw telemetry
-2. Normalize telemetry
-3. Execute operators (real math)
-4. Load thresholds
-5. Apply thresholds (real comparisons)
-6. Assemble stability state
-7. Export stability (placeholder)
+Full runtime pipeline with real ingestion, normalization, operator math,
+threshold evaluation, stability assembly, and Lean export.
 
 Returns:
     StabilityState
 """
 function run_pipeline(model, raw_telemetry; config=load_config())
 
-    ### 1. Ingest raw telemetry
+    ### 1. Ingest raw telemetry (real ingestion)
     packet = ingest_telemetry(raw_telemetry)
 
-    ### 2. Normalize telemetry
+    ### 2. Normalize telemetry (real geometric normalization)
     normed = normalize_telemetry(packet)
 
     ### 3. Execute operators (real math)
