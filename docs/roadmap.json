@@ -1,0 +1,145 @@
+{
+  "project": "StructuralAI-Julia-Runtime",
+  "versioning": {
+    "v1.x": "Core runtime, telemetry integration, performance",
+    "v2.x": "Extended operators and advanced geometry",
+    "v3.x": "Distributed runtime and multi-model telemetry",
+    "v4.x": "Full structural-AI runtime ecosystem"
+  },
+  "phases": [
+    {
+      "id": "v1.0",
+      "name": "Core Runtime",
+      "status": "in-progress",
+      "milestones": [
+        "Curvature operator module",
+        "Spectral drift operator module",
+        "Holonomy deviation operator module",
+        "Topology collapse operator module",
+        "Fusion-field nonlinear operator module",
+        "StabilityState + threshold logic",
+        "Unified runtime pipeline",
+        "JSON export for Lean ingestion",
+        "Telemetry scaffolding for CAUSA + LGT",
+        "Public-facing README + Roadmap"
+      ],
+      "deliverables": [
+        "src/Operators/*",
+        "src/Stability/*",
+        "src/Runtime/Pipeline.jl",
+        "src/LeanBridge/*",
+        "bin/run.jl",
+        "states.json"
+      ]
+    },
+    {
+      "id": "v1.1",
+      "name": "Telemetry Integration",
+      "status": "planned",
+      "milestones": [
+        "CAUSA telemetry ingestion",
+        "LGT telemetry ingestion",
+        "ModelInterface abstraction layer",
+        "Telemetry normalization and preprocessing",
+        "Mapping telemetry to operator inputs",
+        "Telemetry-driven operator tests"
+      ],
+      "deliverables": [
+        "src/Runtime/Telemetry.jl",
+        "src/Runtime/ModelInterface.jl",
+        "docs/telemetry.md",
+        "telemetry test suite"
+      ]
+    },
+    {
+      "id": "v1.2",
+      "name": "Performance & Numerical Stability",
+      "status": "planned",
+      "milestones": [
+        "GPU kernels for curvature and spectral drift",
+        "StaticArrays optimization",
+        "Stabilized eigenvalue drift computation",
+        "Parallel transport acceleration",
+        "Metric rank robustness improvements",
+        "Numerical stress tests"
+      ],
+      "deliverables": [
+        "GPU-enabled operator modules",
+        "benchmark suite",
+        "performance report"
+      ]
+    },
+    {
+      "id": "v1.3",
+      "name": "Rust FFI Runtime",
+      "status": "planned",
+      "milestones": [
+        "Julia ↔ Rust FFI bridge",
+        "Rust operator kernels",
+        "Shared StabilityState serialization",
+        "Unified runtime interface",
+        "Cross-language consistency tests"
+      ],
+      "deliverables": [
+        "rust/ directory",
+        "FFI bindings",
+        "Rust operator implementations"
+      ]
+    },
+    {
+      "id": "v1.4",
+      "name": "WASM Runtime",
+      "status": "planned",
+      "milestones": [
+        "WASM operator kernels",
+        "Browser-side visualization hooks",
+        "Lean verification dashboard integration",
+        "WASM runtime tests"
+      ],
+      "deliverables": [
+        "wasm/ directory",
+        "browser-ready operator runtime",
+        "web-based interpretability UI"
+      ]
+    },
+    {
+      "id": "v2.0",
+      "name": "Extended Operator Suite",
+      "status": "future",
+      "milestones": [
+        "Holonomy drift tensor field",
+        "Spectral-bundle curvature",
+        "Collapse-surface detectors",
+        "Modal-truth lattice operators",
+        "Fusion-field dominance maps"
+      ],
+      "deliverables": [
+        "extended operator modules",
+        "updated Lean definitions",
+        "new StabilityState variants"
+      ]
+    }
+  ],
+  "integration": {
+    "lean": [
+      "JSON export → Lean parser → S : ℕ → StabilityState",
+      "Operator values map to formal definitions",
+      "Stability predicates verified in Lean"
+    ],
+    "telemetry": {
+      "CAUSA": "Causal-structure telemetry",
+      "LGT": "Local geometry telemetry"
+    },
+    "future_targets": [
+      "Rust",
+      "WASM",
+      "GPU kernels",
+      "distributed operator extraction"
+    ]
+  },
+  "provenance": {
+    "author": "Borealis S. Hedling",
+    "ecosystem": "StructuralAI",
+    "description": "Machine-readable roadmap for the StructuralAI-Julia-Runtime engine."
+  }
+}
