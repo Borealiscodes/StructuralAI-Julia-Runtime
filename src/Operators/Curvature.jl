@@ -1,28 +1,41 @@
 module Curvature
 
-export CurvatureResult, compute_curvature
+using ..Utils.Types
+
+export compute_curvature
 
 """
-    CurvatureResult
+    compute_curvature(normed)
 
-Container for curvature operator outputs before thresholding.
-"""
-struct CurvatureResult
-    value::Float64
-    stable::Bool
-end
+Execution-ready curvature operator.
 
-"""
-    compute_curvature(telemetry)
+This function receives normalized telemetry:
+    normed.activation :: ActivationTrace
+    normed.metric     :: MetricEstimate
+    normed.transport  :: TransportHint
 
-Compute the curvature operator from telemetry.
-This is a placeholder scaffolding function — math and logic will be added later.
+It returns a Float64 curvature estimate. Numerical routines will be added
+later; this scaffolding defines the operator's execution signature and
+data flow.
+
+# Expected Output
+A single Float64 representing the curvature estimate for the current
+telemetry slice.
+
+# Notes
+- No geometric math is implemented yet.
+- The placeholder block will be replaced with sectional curvature
+  approximations once the operator math phase begins.
 """
-function compute_curvature(telemetry)
-    # TODO: implement geodesic deviation approximation
-    # TODO: integrate CAUSA + LGT fields
-    # TODO: return CurvatureResult(value, stable)
-    error("compute_curvature not yet implemented")
+function compute_curvature(normed::NamedTuple)
+    act = normed.activation
+    met = normed.metric
+    trn = normed.transport
+
+    # Placeholder computation block (no math yet)
+    curvature_value = 0.0
+
+    return curvature_value
 end
 
 end # module
