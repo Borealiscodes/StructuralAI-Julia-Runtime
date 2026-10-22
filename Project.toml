@@ -1,0 +1,7 @@
+name = "StructuralAI"
+uuid = "b7c9e4f0-9f3a-4b7a-9c2d-1f4e8c2d7a11"
+authors = ["Borealis S. Hedling <borealis@research.example>"]
+version = "1.1.0"
+
+[compat]
+julia = "1.10"
