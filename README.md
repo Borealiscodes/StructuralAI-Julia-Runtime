@@ -44,8 +44,6 @@ These telemetry streams feed the operator extraction layer.
 🗂️ Repository Layout
 
 `
-<pre> 
-
 StructuralAI-Julia-Runtime/
 │
 ├── Project.toml
@@ -98,7 +96,7 @@ StructuralAI-Julia-Runtime/
     ├── lean_integration.md
     └── telemetry.md
 `
-</pre>
+
 ---
 
 🧮 Operator Extraction
@@ -182,6 +180,23 @@ states.json
 `
 
 ready for Lean ingestion.
+
+---
+
+🌱 Eco‑Friendly Design
+StructuralAI‑Julia‑Runtime is an interpretability engine, not a training pipeline.  
+All computations are lightweight geometric operators applied to telemetry streams (CAUSA + LGT). These operators involve small matrices, local curvature estimates, spectral drift checks, and holonomy deviation approximations — tasks that are computationally inexpensive.
+
+GPU kernels mentioned in the roadmap are optional accelerators for specific numerical routines and do not imply model training or high‑impact compute. The runtime:
+
+- does not train models  
+- does not perform inference at scale  
+- does not require large datasets  
+- does not use gradient descent  
+- does not consume significant energy  
+
+Lean verification is symbolic and extremely low‑energy.  
+The entire system is designed to increase transparency without increasing compute footprint, aligning with eco‑friendly AI principles.
 
 ---
 
