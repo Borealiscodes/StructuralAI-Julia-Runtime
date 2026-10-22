@@ -1,51 +1,32 @@
 module Export
 
-import ..Stability.StabilityState: StabilityState
+using ..Stability.StabilityState
 
-export ExportPacket,
-       build_export_packet,
-       write_states_json
+export export_state
 
 """
-    ExportPacket
+    export_state(state)
 
-Container for data destined for Lean ingestion.
-This mirrors the structure of StabilityState but is decoupled from runtime internals.
-"""
-struct ExportPacket
-    curvStable::Bool
-    specStable::Bool
-    holStable::Bool
-    topStable::Bool
-    fusStable::Bool
-end
+Execution-ready Lean export placeholder.
 
-"""
-    build_export_packet(state::StabilityState)
+Converts a StabilityState into a Lean-friendly representation.
+Currently returns a NamedTuple that mirrors the Lean schema shape.
 
-Convert a StabilityState into an ExportPacket.
-This is scaffolding only — additional metadata may be added later.
+Later versions will:
+- serialize to JSON or S-expression
+- write to file or socket
+- integrate with Lean verification pipeline
+
+This scaffolding ensures the runtime has a stable export surface.
 """
-function build_export_packet(state::StabilityState)
-    ExportPacket(
-        state.curvStable,
-        state.specStable,
-        state.holStable,
-        state.topStable,
-        state.fusStable
+function export_state(state::StabilityState)
+    return (
+        curvStable = state.curvStable,
+        specStable = state.specStable,
+        holStable  = state.holStable,
+        topStable  = state.topStable,
+        fusStable  = state.fusStable
     )
-end
-
-"""
-    write_states_json(path, packets)
-
-Write a list of ExportPacket objects to a JSON file for Lean ingestion.
-This is scaffolding only — JSON serialization will be added later.
-"""
-function write_states_json(path::String, packets::Vector{ExportPacket})
-    # TODO: serialize packets to JSON
-    # TODO: write to file at `path`
-    error("write_states_json not yet implemented")
 end
 
 end # module
