@@ -1,0 +1,280 @@
+{
+  "project": "StructuralAI-Julia-Runtime",
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Implement Curvature Operator",
+      "module": "src/Operators/Curvature.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "id": "T-002",
+      "title": "Implement Spectral Drift Operator",
+      "module": "src/Operators/Spectral.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "id": "T-003",
+      "title": "Implement Holonomy Deviation Operator",
+      "module": "src/Operators/Holonomy.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "id": "T-004",
+      "title": "Implement Topology Collapse Operator",
+      "module": "src/Operators/Topology.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "id": "T-005",
+      "title": "Implement Fusion-Field Nonlinear Operator",
+      "module": "src/Operators/Fusion.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": []
+    },
+    {
+      "id": "T-006",
+      "title": "Define StabilityState Structure",
+      "module": "src/Stability/StabilityState.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "id": "T-007",
+      "title": "Implement Operator Threshold Logic",
+      "module": "src/Stability/Thresholds.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-006"]
+    },
+    {
+      "id": "T-008",
+      "title": "Build Unified Runtime Pipeline",
+      "module": "src/Runtime/Pipeline.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": ["T-001", "T-002", "T-003", "T-004", "T-005", "T-006"]
+    },
+    {
+      "id": "T-009",
+      "title": "Implement JSON Export for Lean",
+      "module": "src/LeanBridge/Export.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": ["T-006", "T-008"]
+    },
+    {
+      "id": "T-010",
+      "title": "Define StabilityState Serialization Schema",
+      "module": "src/LeanBridge/Schema.jl",
+      "phase": "v1.0",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-006"]
+    },
+    {
+      "id": "T-011",
+      "title": "Implement CAUSA Telemetry Ingestion",
+      "module": "src/Runtime/Telemetry.jl",
+      "phase": "v1.1",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "id": "T-012",
+      "title": "Implement LGT Telemetry Ingestion",
+      "module": "src/Runtime/Telemetry.jl",
+      "phase": "v1.1",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "id": "T-013",
+      "title": "Build ModelInterface Abstraction Layer",
+      "module": "src/Runtime/ModelInterface.jl",
+      "phase": "v1.1",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-011", "T-012"]
+    },
+    {
+      "id": "T-014",
+      "title": "Telemetry Normalization & Preprocessing",
+      "module": "src/Runtime/Telemetry.jl",
+      "phase": "v1.1",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-011", "T-012"]
+    },
+    {
+      "id": "T-015",
+      "title": "Map Telemetry to Operator Inputs",
+      "module": "src/Runtime/Pipeline.jl",
+      "phase": "v1.1",
+      "status": "pending",
+      "priority": "high",
+      "depends_on": ["T-014", "T-008"]
+    },
+    {
+      "id": "T-016",
+      "title": "Telemetry-Driven Operator Tests",
+      "module": "test/",
+      "phase": "v1.1",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-015"]
+    },
+    {
+      "id": "T-017",
+      "title": "GPU Kernel for Curvature Operator",
+      "module": "src/Operators/Curvature.jl",
+      "phase": "v1.2",
+      "status": "pending",
+      "priority": "low",
+      "depends_on": ["T-001"]
+    },
+    {
+      "id": "T-018",
+      "title": "GPU Kernel for Spectral Drift Operator",
+      "module": "src/Operators/Spectral.jl",
+      "phase": "v1.2",
+      "status": "pending",
+      "priority": "low",
+      "depends_on": ["T-002"]
+    },
+    {
+      "id": "T-019",
+      "title": "StaticArrays Optimization",
+      "module": "src/Utils/MathHelpers.jl",
+      "phase": "v1.2",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-008"]
+    },
+    {
+      "id": "T-020",
+      "title": "Parallel Transport Acceleration",
+      "module": "src/Operators/Holonomy.jl",
+      "phase": "v1.2",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-003"]
+    },
+    {
+      "id": "T-021",
+      "title": "Metric Rank Robustness Improvements",
+      "module": "src/Operators/Topology.jl",
+      "phase": "v1.2",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-004"]
+    },
+    {
+      "id": "T-022",
+      "title": "Numerical Stress Tests",
+      "module": "test/",
+      "phase": "v1.2",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-017", "T-018", "T-019", "T-020", "T-021"]
+    },
+    {
+      "id": "T-023",
+      "title": "Julia ↔ Rust FFI Bridge",
+      "module": "rust/",
+      "phase": "v1.3",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-008"]
+    },
+    {
+      "id": "T-024",
+      "title": "Rust Operator Kernels",
+      "module": "rust/",
+      "phase": "v1.3",
+      "status": "pending",
+      "priority": "low",
+      "depends_on": ["T-023"]
+    },
+    {
+      "id": "T-025",
+      "title": "Shared StabilityState Serialization",
+      "module": "rust/",
+      "phase": "v1.3",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-010", "T-023"]
+    },
+    {
+      "id": "T-026",
+      "title": "Cross-Language Consistency Tests",
+      "module": "test/",
+      "phase": "v1.3",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-024", "T-025"]
+    },
+    {
+      "id": "T-027",
+      "title": "WASM Operator Kernels",
+      "module": "wasm/",
+      "phase": "v1.4",
+      "status": "pending",
+      "priority": "low",
+      "depends_on": ["T-008"]
+    },
+    {
+      "id": "T-028",
+      "title": "Browser Visualization Hooks",
+      "module": "wasm/",
+      "phase": "v1.4",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-027"]
+    },
+    {
+      "id": "T-029",
+      "title": "Lean Verification Dashboard Integration",
+      "module": "wasm/",
+      "phase": "v1.4",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-028", "T-009"]
+    },
+    {
+      "id": "T-030",
+      "title": "WASM Runtime Tests",
+      "module": "test/",
+      "phase": "v1.4",
+      "status": "pending",
+      "priority": "medium",
+      "depends_on": ["T-027", "T-028", "T-029"]
+    }
+  ],
+  "provenance": {
+    "author": "Borealis S. Hedling",
+    "ecosystem": "StructuralAI",
+    "description": "Atomic task tracker for StructuralAI-Julia-Runtime with dependencies and phase alignment."
+  }
+}
