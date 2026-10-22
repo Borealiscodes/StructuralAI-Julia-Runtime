@@ -30,8 +30,7 @@ Causal‑structure telemetry describing activation flow and local geometric beha
 Repository: https://github.com/stell2026/Causa
 
 🟢 Local Geometry Telemetry (LGT)
-A clean, public‑safe replacement for any prior “CMR” terminology.  
-LGT provides:
+Provides:
 
 - local manifold approximations  
 - metric estimates  
@@ -45,7 +44,7 @@ These telemetry streams feed the operator extraction layer.
 🗂️ Repository Layout
 
 `
-<pre>
+<pre> 
 
 StructuralAI-Julia-Runtime/
 │
@@ -99,7 +98,6 @@ StructuralAI-Julia-Runtime/
     ├── lean_integration.md
     └── telemetry.md
 `
-
 </pre>
 ---
 
@@ -205,7 +203,7 @@ This project acknowledges the conceptual influence of Stell (stell2026), whose w
 
 In particular, CAUSA offered a clear example of causal‑structure telemetry design and is linked here out of respect:
 
-🔗 https://github.com/stell2026/Causa
+https://github.com/stell2026/Causa
 
 These influences informed the high‑level design of the StructuralAI‑Julia‑Runtime, while the implementation, operator definitions, stability framework, and Lean integration are original to this project.
 
