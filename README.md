@@ -40,7 +40,7 @@ Provides:
 These telemetry streams feed the operator extraction layer.
 
 ---
-
+<pre>
 🗂️ Repository Layout
 
 `
@@ -97,6 +97,7 @@ StructuralAI-Julia-Runtime/
     └── telemetry.md
 `
 
+</pre>
 ---
 
 🧮 Operator Extraction
